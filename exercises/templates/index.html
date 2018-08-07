@@ -2,11 +2,33 @@
 <html>
 <head>
 	  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-	<title> </title>
+	<title>This is the title</title>
 </head>
+
 <body>
+	<img src="hello_grande.jpg" href="{{url_for('static', filename="hello_grande")}}">
+	<div id=content>
+	<div class=header>
 	<h1> Tennis</h1>
+	</div>
+
+	<div class=para>
 	<p> Its the best cause why not? </p>
+	{%if likes_same_sport==True%}
+	</div>
+	<ul>
+                {% for player in player %}
+                <li> {{player}} </li>
+                {% endfor %}
+    
+    {%else%}
+    <div class=para>
+127.0.0.1 - - [07/Aug/2018 11:04:53] "GET / HTTP/1.1" 200 -
+    <p> cause I said so <p>
+    </div>
+    {%endif%}
+    </ul>
+</div>
 
 </body>
 </html>
